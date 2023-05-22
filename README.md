@@ -12,8 +12,9 @@ System.Drawing.Bitmapからプロパティを取得
      $x=New-Object System.Drawing.Bitmap(".\Sample01.JPG")
      $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTag]$_.Id } } ,Value
     
+ Windows PowerShellでは、Add-Typeが必要になります。
  
-  
+    add-type -AssemblyName system.Drawing
 
 ## EXIFTags.ps1
 Source Infomation  
