@@ -1,5 +1,5 @@
 # Exif-PS
-PowerShell/Windows PowerShell用、ExifタグおよびSystemDrawing.Imageタグの列挙値（emum）定義  
+PowerShell/Windows PowerShell用、ExifタグおよびSystemDrawing.Imageタグの列挙値（enum）定義  
 Enum definitions for Exif and SystemDrawing.Image tags for PowerShell/Windows PowerShell.
 
 ## 使い方/How to Use
