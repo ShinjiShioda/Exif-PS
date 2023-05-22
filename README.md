@@ -1,18 +1,18 @@
 # Exif-PS
-PowerShell/Windows PowerShell用、ExifタグおよびSystemDrawing.Imageタグの列挙値（emum）定義
+PowerShell/Windows PowerShell用、ExifタグおよびSystemDrawing.Imageタグの列挙値（emum）定義  
+Enum definitions for Exif and SystemDrawing.Image tags for PowerShell/Windows PowerShell.
 
-Emum definitions for Exif and SystemDrawing.Image tags for PowerShell/Windows PowerShell.
 ## 使い方/How to Use
-ドットソースでファイルを読み込む  
+ドットソースでファイルを読み込む / Read files with dot source.  
 
     . ./EXIFTags.ps1
     . ./GDIPImageTags.ps1
-System.Drawing.Bitmapからプロパティを取得  
+System.Drawing.Bitmapからプロパティを取得 / Get Property from System.Drawing.Bitmap  
 
      $x=New-Object System.Drawing.Bitmap(".\Sample01.JPG")
      $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTag]$_.Id } } ,Value
     
- Windows PowerShellでは、Add-Typeが必要になります。
+ Windows PowerShellでは、Add-Typeが必要になります。 / For Windows PowerShell 'Add-Type' is required.  
  
     add-type -AssemblyName system.Drawing
 
