@@ -10,13 +10,13 @@ Enum definitions for Exif and SystemDrawing.Image tags for PowerShell/Windows Po
 PowerShell(pwsh.exe)の場合。System.Drawing.Bitmapからプロパティを取得 / Get Property from System.Drawing.Bitmap in PowerShell(pwsh.exe)  
 
      $x=New-Object System.Drawing.Bitmap(<Full path of picture>)
-     $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTag]$_.Id } } ,Value
+     $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTags]$_.Id } } ,Value
     
  Windows PowerShellでは、Add-Typeが必要になります。 / Windows PowerShell requires 'Add-Type'.  
  
     add-type -AssemblyName system.Drawing
     $x=New-Object System.Drawing.Bitmap(<Full path of picture>)
-    $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTag]$_.Id } } ,Value
+    $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTags]$_.Id } } ,Value
 
 ## EXIFTags.ps1
 Source Infomation  
