@@ -7,16 +7,18 @@ Enum definitions for Exif and SystemDrawing.Image tags for PowerShell/Windows Po
 
     . ./EXIFTags.ps1
     . ./GDIPImageTags.ps1
+    . ./Ptype.ps1
+    . ./PrintValue.ps1
 PowerShell(pwsh.exe)の場合。System.Drawing.Bitmapからプロパティを取得 / Get Property from System.Drawing.Bitmap in PowerShell(pwsh.exe)  
 
      $x=New-Object System.Drawing.Bitmap(<Full path of picture>)
-     $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTags]$_.Id } } ,Value
+     $x.PropertyItems | sort id |  select  @{Name="IdHex";Expression={$_.id.ToString("X4")}},@{Name="TagName"; Expression={[EXIFTags]$_.Id }} ,@{Name="Val"; Expression={[Ptype]$_.Type}},Value, @{Name="Vdisp"; Expression={printvalue $_.Type $_.Value}} | ft
     
  Windows PowerShellでは、Add-Typeが必要になります。 / Windows PowerShell requires 'Add-Type'.  
  
     add-type -AssemblyName system.Drawing
     $x=New-Object System.Drawing.Bitmap(<Full path of picture>)
-    $x.PropertyItems | select  id, @{Name="TagName"; Expression={[EXIFTags]$_.Id} },@{Name='GDIPTagName'; Expression={[GDIPImageTags]$_.Id } } ,Value
+    $x.PropertyItems | sort id |  select  @{Name="IdHex";Expression={$_.id.ToString("X4")}},@{Name="TagName"; Expression={[EXIFTags]$_.Id }} ,@{Name="Val"; Expression={[Ptype]$_.Type}},Value, @{Name="Vdisp"; Expression={printvalue $_.Type $_.Value}} | ft
 
 ## EXIFTags.ps1
 Source Infomation  
