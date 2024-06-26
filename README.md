@@ -20,6 +20,7 @@ PowerShell(pwsh.exe)の場合。System.Drawing.Bitmapからプロパティを取
     $x=New-Object System.Drawing.Bitmap(<Full path of picture>)
     $x.PropertyItems | sort id |  select  @{Name="IdHex";Expression={$_.id.ToString("X4")}},@{Name="TagName"; Expression={[EXIFTags]$_.Id }} ,@{Name="Val"; Expression={[Ptype]$_.Type}},Value, @{Name="Vdisp"; Expression={printvalue $_.Type $_.Value}} | ft
 
+![Picture01](./Pic01.png "Pic01")
 ## EXIFTags.ps1
 Source Infomation  
 CIPA DC-008-2023  
