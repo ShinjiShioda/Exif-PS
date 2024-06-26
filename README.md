@@ -30,6 +30,7 @@ https://www.cipa.jp/std/documents/download_j.html?CIPA_DC-X008-2023_J
 
 ## GDIPImageTags.ps1
 Source Infomation  
-Windows kit Gdiplusimaging.h  
+Windows kit Gdiplusimaging.h SDK Ver.10.0.22621.0(2024/06/26)
+
 https://learn.microsoft.com/ja-jp/windows/win32/gdiplus/-gdiplus-constant-image-property-tag-constants?redirectedfrom=MSDN
 https://learn.microsoft.com/en-us/windows/win32/gdiplus/-gdiplus-constant-image-property-tag-constants?redirectedfrom=MSDN
